@@ -57,13 +57,14 @@ App will start on:
 👉 http://localhost:8080
 
 📌 API Endpoints
-Method	Endpoint	Description	Request Body	Response
-GET	/students	Fetch all students	-	json [{"id":1,"name":"Nikhil","email":"nikhil@example.com"},{"id":2,"name":"Aadi","email":"aadi@example.com"},{"id":3,"name":"Om","email":"om@example.com"}]
-GET	/students/{id}	Fetch student by ID	-	json {"id":1,"name":"Nikhil","email":"nikhil@example.com"}
-POST	/students	Add a new student	json {"name":"Nikhil","email":"nikhil@example.com"}	json {"id":1,"name":"Nikhil","email":"nikhil@example.com"}
-PUT	/students/{id}	Update student details	json {"name":"Nikhil Updated","email":"nikhilupdated@example.com"}	json {"id":1,"name":"Nikhil Updated","email":"nikhilupdated@example.com"}
-PATCH	/students/{id}	Update partial details	json {"email":"nikhilnew@example.com"}	json {"id":1,"name":"Nikhil Updated","email":"nikhilnew@example.com"}
-DELETE	/students/{id}	Delete a student	-	json {"message":"Student deleted successfully"}
+| Method | Endpoint         | Description            | Request Body                                                    | Response                                                                                                                                                  |
+| ------ | ---------------- | ---------------------- | --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET    | `/students`      | Fetch all students     | -                                                               | `[{"id":1,"name":"Nikhil","email":"nikhil@example.com"},{"id":2,"name":"Aadi","email":"aadi@example.com"},{"id":3,"name":"Om","email":"om@example.com"}]` |
+| GET    | `/students/{id}` | Fetch student by ID    | -                                                               | `{"id":1,"name":"Nikhil","email":"nikhil@example.com"}`                                                                                                   |
+| POST   | `/students`      | Add a new student      | `{"name":"Nikhil","email":"nikhil@example.com"}`                | `{"id":1,"name":"Nikhil","email":"nikhil@example.com"}`                                                                                                   |
+| PUT    | `/students/{id}` | Update student details | `{"name":"Nikhil Updated","email":"nikhilupdated@example.com"}` | `{"id":1,"name":"Nikhil Updated","email":"nikhilupdated@example.com"}`                                                                                    |
+| PATCH  | `/students/{id}` | Update partial details | `{"email":"nikhilnew@example.com"}`                             | `{"id":1,"name":"Nikhil Updated","email":"nikhilnew@example.com"}`                                                                                        |
+| DELETE | `/students/{id}` | Delete a student       | -                                                               | `{"message":"Student deleted successfully"}`                                                                                                              |
 
 🤝 Contribution
 
