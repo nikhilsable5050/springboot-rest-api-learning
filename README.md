@@ -22,17 +22,7 @@ A Spring Boot project to learn REST APIs with **GET, POST, PUT, PATCH, DELETE** 
 
 ---
 
-## 📂 Project Structure
-src/main/java/com/example/learningrestapis
-├── controller
-├── service
-├── model
-└── repository
 
-yaml
-Copy code
-
----
 
 ## ▶️ How to Run
 1. Clone the repository:
