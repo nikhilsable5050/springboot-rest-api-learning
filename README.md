@@ -1,21 +1,10 @@
+Student CRUD API - Spring Boot + PostgreSQL
 
-# Spring Boot REST API Learning  
-
-A Spring Boot project to learn REST APIs with **GET, POST, PUT, PATCH, DELETE** operations.  
-🎓 Student CRUD API - Spring Boot + PostgreSQL
-
-
-
-
-
-
-
-
-A Spring Boot REST API project demonstrating basic CRUD operations (Create, Read, Update, Delete, Patch) on a Student entity using PostgreSQL.
+This is a simple Spring Boot REST API project that demonstrates basic CRUD operations (Create, Read, Update, Delete, Patch) on a Student entity using PostgreSQL as the database.
 
 📌 Features
 
-REST API endpoints:
+REST API endpoints for:
 
 GET → Fetch all students / fetch by ID
 
@@ -23,15 +12,15 @@ POST → Add a new student
 
 PUT → Update student details
 
-PATCH → Update partial details (e.g., email only)
+PATCH → Update partial details (e.g., only email)
 
 DELETE → Remove a student
 
 Database: PostgreSQL
 
-ORM: JPA + Hibernate
+JPA + Hibernate for ORM
 
-Repository: Spring Data JPA
+Spring Data JPA Repository
 
 📂 Project Structure
 src/main/java/com/example/studentcrud
@@ -45,6 +34,9 @@ src/main/java/com/example/studentcrud
 
 ⚙️ Dependencies
 
+Added via Spring Initializr
+:
+
 Spring Web
 
 Spring Data JPA
@@ -53,49 +45,33 @@ PostgreSQL Driver
 
 🛠️ Setup & Run
 1️⃣ Database Setup
+
+Open PostgreSQL terminal:
+
 psql -U postgres
 
+
+Create the database:
+
 CREATE DATABASE studentdb;
+
+
+Connect to it:
+
 \c studentdb;
-
-2️⃣ Configure Application
-
-src/main/resources/application.properties:
-
-spring.datasource.url=jdbc:postgresql://localhost:5432/studentdb
-spring.datasource.username=postgres
-spring.datasource.password=your_password_here
-
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-
-3️⃣ Run the Application
+3️⃣ Run the App
 mvn spring-boot:run
 
 
-The application runs at:
+App will start on:
 👉 http://localhost:8080
 
-🖥️ API Endpoints
+📌 API Endpoints
 Get all students
 GET /students
 
-
-Response:
-
-[
-  { "id": 1, "name": "John Doe", "email": "john@example.com" },
-  { "id": 2, "name": "Jane Smith", "email": "jane@example.com" }
-]
-
 Get student by ID
 GET /students/{id}
-
-
-Response:
-
-{ "id": 1, "name": "John Doe", "email": "john@example.com" }
 
 Add new student
 POST /students
@@ -103,12 +79,10 @@ POST /students
 
 Request Body:
 
-{ "name": "John Doe", "email": "john@example.com" }
-
-
-Response:
-
-{ "id": 1, "name": "John Doe", "email": "john@example.com" }
+{
+  "name": "Aadi",
+  "email": "aadi@example.com"
+}
 
 Update student
 PUT /students/{id}
@@ -116,7 +90,10 @@ PUT /students/{id}
 
 Request Body:
 
-{ "name": "John Updated", "email": "johnupdated@example.com" }
+{
+  "name": "Nikhil",
+  "email": "nikhil@example.com"
+}
 
 Update partial (email only)
 PATCH /students/{id}
@@ -124,16 +101,13 @@ PATCH /students/{id}
 
 Request Body:
 
-{ "email": "newemail@example.com" }
+{
+  "email": "newemail@example.com"
+}
 
 Delete student
 DELETE /students/{id}
 
 🤝 Contribution
 
-Fork the repository
-
-Open issues
-
-Submit pull requests
-
+Feel free to fork this repo, open issues, and submit pull requests!
