@@ -1,5 +1,4 @@
-# springboot-rest-api-learning
-“A Spring Boot project to learn REST APIs with GET, POST, PUT, PATCH, DELETE”
+
 # Spring Boot REST API Learning  
 
 A Spring Boot project to learn REST APIs with **GET, POST, PUT, PATCH, DELETE** operations.  
@@ -19,7 +18,7 @@ A Spring Boot project to learn REST APIs with **GET, POST, PUT, PATCH, DELETE** 
 - Java 21  
 - Spring Boot 3.x  
 - Maven  
-- H2 Database (in-memory)  
+- Postgresql 
 
 ---
 
@@ -52,78 +51,81 @@ Or run directly from your IDE.
 http
 Copy code
 GET /api/items
+📡 API Endpoints
+1. GET (Fetch all students)
+GET /api/students
+
+
 Response:
 
-json
-Copy code
 [
   {
     "id": 1,
-    "name": "Book",
-    "price": 200
+    "name": "Nikhil",
+    "email": "nikhil@example.com"
   }
 ]
-2. POST (Add new item)
-http
-Copy code
-POST /api/items
-Request Body:
 
-json
-Copy code
-{
-  "name": "Laptop",
-  "price": 55000
-}
+2. GET (Fetch single student)
+GET /api/students/1
+
+
 Response:
 
-json
-Copy code
+{
+  "id": 1,
+  "name": "Nikhil",
+  "email": "nikhil@example.com"
+}
+
+3. POST (Add new student)
+POST /api/students
+
+
+Request Body:
+
+{
+  "name": "Ravi",
+  "email": "ravi@example.com"
+}
+
+
+Response:
+
 {
   "id": 2,
-  "name": "Laptop",
-  "price": 55000
+  "name": "Ravi",
+  "email": "ravi@example.com"
 }
-3. PUT (Full update)
-http
-Copy code
-PUT /api/items/2
+
+4. PUT (Full update of student)
+PUT /api/students/2
+
+
 Request Body:
 
-json
-Copy code
 {
-  "name": "Laptop Pro",
-  "price": 60000
+  "name": "Ravi Kumar",
+  "email": "ravikumar@example.com"
 }
-4. PATCH (Partial update)
-http
-Copy code
-PATCH /api/items/2
+
+5. PATCH (Partial update of student)
+PATCH /api/students/2
+
+
 Request Body:
 
-json
-Copy code
 {
-  "price": 58000
+  "email": "ravi.new@example.com"
 }
-5. DELETE (Remove item)
-http
-Copy code
-DELETE /api/items/2
+
+6. DELETE (Remove student)
+DELETE /api/students/2
+
+
 Response:
 
-json
-Copy code
 {
-  "message": "Item deleted successfully"
+  "message": "Student deleted successfully"
 }
-✨ Future Improvements
-Add authentication (JWT)
 
-Connect with MySQL/Postgres
-
-Add Swagger UI for API docs
-
-🤝 Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss.
