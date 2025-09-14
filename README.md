@@ -24,13 +24,18 @@ Spring Data JPA Repository
 
 📂 Project Structure
 src/main/java/com/example/studentcrud
+
 ├── entity
 │   └── Student.java
+
 ├── repository
 │   └── StudentRepository.java
+
 ├── controller
 │   └── StudentController.java
+
 └── StudentCrudSpringbootPostgresApplication.java
+
 
 ⚙️ Dependencies
 
@@ -43,22 +48,7 @@ Spring Data JPA
 
 PostgreSQL Driver
 
-🛠️ Setup & Run
-1️⃣ Database Setup
 
-Open PostgreSQL terminal:
-
-psql -U postgres
-
-
-Create the database:
-
-CREATE DATABASE studentdb;
-
-
-Connect to it:
-
-\c studentdb;
 3️⃣ Run the App
 mvn spring-boot:run
 
@@ -67,46 +57,13 @@ App will start on:
 👉 http://localhost:8080
 
 📌 API Endpoints
-Get all students
-GET /students
-
-Get student by ID
-GET /students/{id}
-
-Add new student
-POST /students
-
-
-Request Body:
-
-{
-  "name": "Aadi",
-  "email": "aadi@example.com"
-}
-
-Update student
-PUT /students/{id}
-
-
-Request Body:
-
-{
-  "name": "Nikhil",
-  "email": "nikhil@example.com"
-}
-
-Update partial (email only)
-PATCH /students/{id}
-
-
-Request Body:
-
-{
-  "email": "newemail@example.com"
-}
-
-Delete student
-DELETE /students/{id}
+Method	Endpoint	Description	Request Body	Response
+GET	/students	Fetch all students	-	json [{"id":1,"name":"Nikhil","email":"nikhil@example.com"},{"id":2,"name":"Aadi","email":"aadi@example.com"},{"id":3,"name":"Om","email":"om@example.com"}]
+GET	/students/{id}	Fetch student by ID	-	json {"id":1,"name":"Nikhil","email":"nikhil@example.com"}
+POST	/students	Add a new student	json {"name":"Nikhil","email":"nikhil@example.com"}	json {"id":1,"name":"Nikhil","email":"nikhil@example.com"}
+PUT	/students/{id}	Update student details	json {"name":"Nikhil Updated","email":"nikhilupdated@example.com"}	json {"id":1,"name":"Nikhil Updated","email":"nikhilupdated@example.com"}
+PATCH	/students/{id}	Update partial details	json {"email":"nikhilnew@example.com"}	json {"id":1,"name":"Nikhil Updated","email":"nikhilnew@example.com"}
+DELETE	/students/{id}	Delete a student	-	json {"message":"Student deleted successfully"}
 
 🤝 Contribution
 
